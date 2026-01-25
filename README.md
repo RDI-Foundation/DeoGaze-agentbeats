@@ -1,12 +1,30 @@
 # Entropic CRMArena
 
-> **AgentX Competition Phase 1**
-
 [![Docker](https://img.shields.io/badge/Docker-ghcr.io%2Frkstu%2Fentropic--crmarena--green-blue)](https://ghcr.io/rkstu/entropic-crmarena-green)
 [![AgentBeats](https://img.shields.io/badge/AgentBeats-Registered-green)](https://agentbeats.dev)
 [![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 
-**A2A-compliant benchmark** for evaluating CRM agents with adversarial robustness testing.
+## What is Entropic CRMArena?
+
+We extend the [Salesforce CRMArenaPro](https://huggingface.co/datasets/Salesforce/CRMArenaPro) benchmark with **adversarial robustness testing** and **multi-dimensional evaluation** for CRM agents. While the original benchmark measures functional task completion across 22 CRM categories, real-world deployments face schema changes and noisy data that standard benchmarks fail to capture.
+
+### Our Contributions
+
+| Extension | Description |
+| --------- | ----------- |
+| **Schema Drift** | We programmatically rename database columns (e.g., `owner_id` → `assigned_agent`) at configurable intensity levels, testing whether agents can adapt to evolving schemas without explicit retraining. |
+| **Context Rot** | We inject semantically plausible but irrelevant distractor records into task contexts, measuring an agent's ability to filter noise and maintain focus on relevant information. |
+| **7-Dimension Scoring** | Beyond binary pass/fail, we evaluate agents on functional accuracy, drift adaptation, token efficiency, query efficiency, error recovery, trajectory efficiency, and hallucination rate—providing a holistic view of agent capabilities. |
+
+### Implementation
+
+- **A2A-Compliant Green Agent** — Implements the [Agent-to-Agent protocol](https://google.github.io/A2A/) for standardized evaluation
+- **Near-Zero Evaluation Overhead** — <0.5% of total runtime, ensuring measured performance reflects the tested agent rather than benchmark artifacts
+- **Containerized & Reproducible** — Docker images for consistent evaluation across environments
+
+---
+
+> **AgentX Competition Phase 1** — This benchmark is registered on the [AgentBeats leaderboard](https://agentbeats.dev) for the Berkeley RDI AgentX competition.
 
 ### Essential Resources
 
@@ -31,15 +49,16 @@
 
 ## Table of Contents
 
-| Section                                                                     | Description                                 |
-| --------------------------------------------------------------------------- | ------------------------------------------- |
-| [Overview](#overview)                                                       | What this benchmark does, features, dataset |
-| [Building Your Purple Agent](#building-your-purple-agent)                   | A2A compatibility & template                |
-| [Part 1: Local Testing](#part-1-local-testing)                              | Test your agent locally (7 steps)           |
-| [Part 2: Leaderboard Submission](#part-2-agentbeats-leaderboard-submission) | Submit to AgentBeats (7 steps)              |
-| [Configuration](#configuration)                                             | All config options                          |
-| [Technical Reference](#technical-reference)                                 | Task format, scoring, schemas               |
-| [Changelog](#changelog)                                                     | Version history                             |
+| Section                                                                     | Description                                     |
+| --------------------------------------------------------------------------- | ----------------------------------------------- |
+| [What is Entropic CRMArena?](#what-is-entropic-crmarena)                    | Project overview, contributions, implementation |
+| [Overview](#overview)                                                       | Capabilities, features, dataset                 |
+| [Building Your Purple Agent](#building-your-purple-agent)                   | A2A compatibility & template                    |
+| [Part 1: Local Testing](#part-1-local-testing)                              | Test your agent locally (7 steps)               |
+| [Part 2: Leaderboard Submission](#part-2-agentbeats-leaderboard-submission) | Submit to AgentBeats (7 steps)                  |
+| [Configuration](#configuration)                                             | All config options                              |
+| [Technical Reference](#technical-reference)                                 | Task format, scoring, schemas                   |
+| [Changelog](#changelog)                                                     | Version history                                 |
 
 ---
 
