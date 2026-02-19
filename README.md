@@ -4,6 +4,10 @@
 [![AgentBeats](https://img.shields.io/badge/AgentBeats-Registered-green)](https://agentbeats.dev)
 [![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 
+## 🏆 Updates
+- This project won **1st Place** at [Berkeley RDI AgentX–AgentBeats](https://rdi.berkeley.edu/agentx-agentbeats) Competition, Business Process Agent Track, and earned the [Agentic AI MOOC Legendary Tier certification](https://drive.google.com/file/d/18XVFI23ps3To4FhiVg5S9goW3kh9JoMm/view?usp=sharing)
+- Published a detailed Medium walkthrough of the project — [Medium](https://medium.com/@rahulkumar_dev/building-crm-agents-that-survive-production-793498b80a3c)
+
 ## What is Entropic CRMArena?
 
 We extend the [Salesforce CRMArenaPro](https://huggingface.co/datasets/Salesforce/CRMArenaPro) benchmark with **adversarial robustness testing** and **multi-dimensional evaluation** for CRM agents. While the original benchmark measures functional task completion across 22 CRM categories, real-world deployments face schema changes and noisy data that standard benchmarks fail to capture.
