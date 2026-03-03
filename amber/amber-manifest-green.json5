@@ -15,13 +15,13 @@
       OPENAI_API_KEY: "${config.openai_api_key}",
       NEBIUS_API_KEY: "${config.nebius_api_key}",
       PROXY_URL: "${slots.proxy.url}",
-      LOG_LEVEL: "INFO",
+      LOG_LEVEL: "INFO"
     },
     network: {
       endpoints: [
-        { name: "endpoint", port: 8081 },
-      ],
-    },
+        { name: "endpoint", port: 8081 }
+      ]
+    }
   },
   config_schema: {
     type: "object",
@@ -30,16 +30,16 @@
       nebius_api_key: { type: "string", secret: true }
     },
     required: ["openai_api_key", "nebius_api_key"],
-    additionalProperties: false,
+    additionalProperties: false
   },
   slots: {
-    proxy: { kind: "a2a" },
+    proxy: { kind: "a2a" }
   },
   provides: {
-    a2a: { kind: "a2a", endpoint: "endpoint" },
+    a2a: { kind: "a2a", endpoint: "endpoint" }
   },
   exports: {
-    a2a: "a2a",
+    a2a: "a2a"
   },
   metadata: {
     assessment_config: {
@@ -48,7 +48,7 @@
       "rot_level": "none",
       "max_steps": 7,
       "timeout": 300,
-      "org_type": "b2c",
+      "org_type": "b2c"
     },
     participant_roles: ["agent"]
   }
